@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webisora - Rotating elements using JavaScript examples</title>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div class="examples_wrapper">
+    <h1>More examples</h1>
+    <div class="grid-view">
+        <div class="grid-view-item">
+            <div class="example">
+                <p>
+                    Inertia: 1, Speed: 1
+                </p>
+                <img class="rotate-this"  id="example1" src="../images/paper-min.png">
+            </div>
+            <div class="example">
+                <p>
+                    Inertia: 0.98, Speed: 0
+                </p>
+                <p>and with Stop callback</p>
+                <img class="rotate-this"  id="example2" src="../images/paper-min.png">
+            </div>
+            <div class="example">
+                <p>
+                    Inertia: 0, Speed: 0
+                </p>
+                <img class="rotate-this"  id="example3" src="../images/paper-min.png">
+            </div>
+        </div>
+        <div class="grid-view-item">
+            <div class="example">
+                <p>
+                    Inertia: 1, Speed: 0, Step: 30
+                </p>
+                <img class="rotate-this"  id="example4" src="../images/paper-min.png">
+            </div>
+            <div class="example">
+                <p>
+                    Inertia: 0.99, speed: 0, step: 10
+                </p>
+                <img class="rotate-this"  id="example5" src="../images/paper-min.png">
+            </div>
+            <div class="example">
+                <p>
+                    Inertia: 0, speed: 0, step: 45
+                </p>
+                <img class="rotate-this"  id="example6" src="../images/paper-min.png">
+            </div>
+        </div>
+        <div class="grid-view-item">
+            <div class="example">
+                <p>
+                    inertia: 1, speed: 0, step: 30, stepTransitionTime: 500
+                </p>
+                <img class="rotate-this"  id="example7" src="../images/paper-min.png">
+            </div>
+            <div class="example">
+                <p>
+                    inertia: 0.99, speed: 0, step: 10, stepTransitionTime: 100
+                </p>
+                <img class="rotate-this"  id="example8" src="../images/paper-min.png">
+            </div>
+            <div class="example">
+                <p>
+                    Inertia: 0, speed: 0, step: 45, stepTransitionTime: 300
+                </p>
+                <p> and with rotate callback (check console)</p>
+                <img class="rotate-this"  id="example9" src="../images/paper-min.png">
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../propeller.min.js"></script>
+<script>
+
+    new Propeller(document.getElementById('example1'), {inertia: 1, speed: 1});
+    new Propeller(document.getElementById('example2'), {inertia: 0.98, speed: 0, angle: 30, onStop: function(){alert('Stopped')}});
+    new Propeller(document.getElementById('example3'), {inertia: 0, speed: 0});
+    new Propeller(document.getElementById('example4'), {inertia: 1, speed: 0, step: 30});
+    new Propeller(document.getElementById('example5'), {inertia: 0.99, speed: 0, step: 10});
+    new Propeller(document.getElementById('example6'), {inertia: 0, speed: 0, step: 45});
+    new Propeller(document.getElementById('example7'), {inertia: 1, speed: 0, step: 30, stepTransitionTime: 500, stepTransitionEasing: 'ease-in-out'});
+    new Propeller(document.getElementById('example8'), {inertia: 0.99, speed: 0, step: 10, stepTransitionTime: 100, stepTransitionEasing: 'ease-in'});
+    new Propeller(document.getElementById('example9'), {inertia: 0, speed: 0, step: 45, stepTransitionTime: 300, stepTransitionEasing: 'ease-out', onRotate: function(){
+        console.log(this.angle);
+    }});
+</script>
+</body>
+</html>

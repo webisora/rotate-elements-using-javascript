@@ -1,0 +1,31 @@
+.rotate-this{
+  width: 200px;
+}
+
+.grid-view{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+
+.grid-view-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    margin: 10px;
+}
+
+.example{
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.expamle p {
+    padding: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
